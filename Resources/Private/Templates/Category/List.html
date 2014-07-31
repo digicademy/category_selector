@@ -1,0 +1,30 @@
+{namespace adwlm=ADWLM\CategorySelector\ViewHelpers}
+
+<f:if condition="{settings.selectedCategories}">
+	<f:render partial="SelectedCategories" arguments="{selectedCategoriesArray : settings.selectedCategoriesArray}" />
+</f:if>
+
+<div class="contentnavigation filter">
+
+	<ul class="level0">
+		<f:for each="{categoryTree.0}" as="currentCategory">
+
+			<li class="{f:if(condition:'{adwlm:InArrayExplode(needle : currentCategory.uid, haystack : settings.selectedCategories)}', then : 'selected', else : 'no')}">
+
+				<f:link.action action="select" arguments="{category : currentCategory.uid, selectedCategories : settings.selectedCategories}" pageUid="{settings.targetPid}">
+					{currentCategory.title}
+				</f:link.action>
+
+				<f:render partial="ChildCategoryRecursion" arguments="{
+					categoryTree : categoryTree,
+					selectedCategories : settings.selectedCategories,
+					currentCategory : currentCategory,
+					currentLevel : 0,
+					stopRecursionOnLevel : settings.recursive}"
+				/>
+
+			</li>
+		</f:for>
+	</ul>
+
+</div>

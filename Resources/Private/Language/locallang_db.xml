@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'category_selector'</description>
+	</meta>
+	<data type="array">
+
+		<languageKey index="default" type="array">
+
+			<label index="categorySelector.parentCategories">Selected parent categories</label>
+			<label index="categorySelector.categories2skip">Categories to exclude</label>
+			<label index="categorySelector.targetPid">Target page for links</label>
+			<label index="categorySelector.recursive">Recursive</label>
+			<label index="categorySelector.recursive.I.0">1 Level</label>
+			<label index="categorySelector.recursive.I.1">2 Levels</label>
+			<label index="categorySelector.recursive.I.2">3 Levels</label>
+			<label index="categorySelector.recursive.I.3">4 Levels</label>
+			<label index="categorySelector.recursive.I.4">5 Levels</label>
+			<label index="categorySelector.recursive.I.5">Infinite (250 Levels)</label>
+			<label index="categorySelector.categorizedObject">Example record for categorization</label>
+
+		</languageKey>
+
+		<languageKey index="de" type="array">
+
+			<label index="categorySelector.parentCategories">Ausgewählte Elternkategorien</label>
+			<label index="categorySelector.categories2skip">Folgende Kategorien ausschließen</label>
+			<label index="categorySelector.targetPid">Zielseite für Kategorienlinks</label>
+			<label index="categorySelector.rekursive">Rekursionstiefe</label>
+			<label index="categorySelector.recursive.I.0">1 Ebene</label>
+			<label index="categorySelector.recursive.I.1">2 Ebenen</label>
+			<label index="categorySelector.recursive.I.2">3 Ebenen</label>
+			<label index="categorySelector.recursive.I.3">4 Ebenen</label>
+			<label index="categorySelector.recursive.I.4">5 Ebenen</label>
+			<label index="categorySelector.recursive.I.5">Unendlich (250 Ebenen)</label>
+			<label index="categorySelector.categorizedObject">Beispieldatensatz für Kategorisierung</label>
+
+		</languageKey>
+
+	</data>
+</T3locallang>

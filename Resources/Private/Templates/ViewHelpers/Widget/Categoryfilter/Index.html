@@ -1,0 +1,16 @@
+<f:if condition="{selectedCategoriesArray}">
+	<f:if condition="{configuration.displaySelectedCategoryNames}">
+		<f:render partial="SelectedCategories" arguments="{selectedCategoriesArray : selectedCategoriesArray}" />
+	</f:if>
+
+	<p><strong><f:translate key="categories.objectCount" />:</strong> {objectCount}</p>
+</f:if>
+
+<f:if condition="{objectCount} > 0">
+	<f:then>
+		<f:renderChildren arguments="{contentArguments}" />
+	</f:then>
+	<f:else>
+		<p><f:translate key="categories.nothingFoundForSelection" /></p>
+	</f:else>
+</f:if>
