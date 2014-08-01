@@ -8,6 +8,8 @@
 
 		<languageKey index="default" type="array">
 
+			<label index="plugin.sheet.general">General</label>
+			<label index="plugin.sheet.count">Category count</label>
 			<label index="categorySelector.parentCategories">Selected parent categories</label>
 			<label index="categorySelector.categories2skip">Categories to exclude</label>
 			<label index="categorySelector.targetPid">Target page for links</label>
@@ -20,23 +22,27 @@
 			<label index="categorySelector.recursive.I.5">Infinite (250 Levels)</label>
 			<label index="categorySelector.categorizedObject">Example record for category count</label>
 			<label index="categorySelector.categorizedObjectPids">Pages with categorized records for category count</label>
+			<label index="categorySelector.showCategoriesWithNoObjects">Also show categories with no records</label>
 
 		</languageKey>
 
 		<languageKey index="de" type="array">
 
+			<label index="plugin.sheet.general">Allgemein</label>
+			<label index="plugin.sheet.count">Kategoriezählung</label>
 			<label index="categorySelector.parentCategories">Ausgewählte Elternkategorien</label>
 			<label index="categorySelector.categories2skip">Folgende Kategorien ausschließen</label>
 			<label index="categorySelector.targetPid">Zielseite für Kategorienlinks</label>
-			<label index="categorySelector.rekursive">Rekursionstiefe</label>
+			<label index="categorySelector.recursive">Rekursionstiefe</label>
 			<label index="categorySelector.recursive.I.0">1 Ebene</label>
 			<label index="categorySelector.recursive.I.1">2 Ebenen</label>
 			<label index="categorySelector.recursive.I.2">3 Ebenen</label>
 			<label index="categorySelector.recursive.I.3">4 Ebenen</label>
 			<label index="categorySelector.recursive.I.4">5 Ebenen</label>
 			<label index="categorySelector.recursive.I.5">Unendlich (250 Ebenen)</label>
-			<label index="categorySelector.categorizedObject">Beispieldatensatz für die Erstellung der Kategoriezählung</label>
-			<label index="categorySelector.categorizedObjectPids">Seiten mit kategorisierten Datensätzen für Kategoriezählung</label>
+			<label index="categorySelector.categorizedObject">Beispieldatensatz für Kategoriezählung</label>
+			<label index="categorySelector.categorizedObjectPids">Seiten mit Datensätzen für Kategoriezählung</label>
+			<label index="categorySelector.showCategoriesWithNoObjects">Kategorien ohne Datensätze ebenfalls anzeigen</label>
 
 		</languageKey>
 

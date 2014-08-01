@@ -88,6 +88,18 @@
 						</TCEforms>
 					</settings.recursive>
 
+				</el>
+			</ROOT>
+		</sDEF>
+
+		<sCOUNT>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:category_selector/Resources/Private/Language/locallang_db.xml:plugin.sheet.count</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+
 					<settings.categorizedObject>
 						<TCEforms>
 							<label>LLL:EXT:category_selector/Resources/Private/Language/locallang_db.xml:categorySelector.categorizedObject</label>
@@ -118,8 +130,18 @@
 						</TCEforms>
 					</settings.categorizedObjectPids>
 
+					<settings.showCategoriesWithNoObjects>
+						<TCEforms>
+							<label>LLL:EXT:category_selector/Resources/Private/Language/locallang_db.xml:categorySelector.showCategoriesWithNoObjects</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.showCategoriesWithNoObjects>
+
 				</el>
 			</ROOT>
-		</sDEF>
+		</sCOUNT>
+
 	</sheets>
 </T3DataStructure> 

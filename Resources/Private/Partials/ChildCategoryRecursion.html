@@ -7,21 +7,22 @@
 			<ul class="level{nextLevel}">
 				<f:for each="{adwlm:ArrayValue(key : currentCategory.uid, array : categoryTree, level : nextLevel)}" as="childCategory">
 
-					<li class="{f:if(condition:'{adwlm:InArrayExplode(needle : childCategory.uid, haystack : selectedCategories)}', then : 'selected', else : 'no')}">
+					<f:alias map="{count : '{adwlm:categorycount(categorizedObject : settings.categorizedObject, categorizedObjectPids : settings.categorizedObjectPids, currentCategory : childCategory.uid, selectedCategories : selectedCategories)}'}">
 
-						<f:link.action action="select" arguments="{category : childCategory.uid, selectedCategories : selectedCategories}" pageUid="{settings.targetPid}">
-							{childCategory.title} (<adwlm:categorycount categorizedObject="{settings.categorizedObject}" categorizedObjectPids="{settings.categorizedObjectPids}" currentCategory="{childCategory.uid}" selectedCategories="{selectedCategories}" />)
-						</f:link.action>
+						<f:if condition="{settings.showCategoriesWithNoObjects} == 1">
+							<f:then>
+								<f:render partial="ChildCategory" arguments="{_all}" />
+							</f:then>
+							<f:else>
+								<f:if condition="{count} > 0">
+									<f:render partial="ChildCategory" arguments="{_all}" />
+								</f:if>
+							</f:else>
 
-						<f:render partial="ChildCategoryRecursion" arguments="{
-							categoryTree : categoryTree,
-							selectedCategories : selectedCategories,
-							currentCategory : childCategory,
-							currentLevel : nextLevel,
-							stopRecursionOnLevel : stopRecursionOnLevel}"
-						/>
+						</f:if>
 
-					</li>
+					</f:alias>
+
 				</f:for>
 			</ul>
 		</f:if>

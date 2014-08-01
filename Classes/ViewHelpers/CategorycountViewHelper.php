@@ -44,15 +44,21 @@ class CategorycountViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractV
 	 */
 	public function render($currentCategory, $selectedCategories, $categorizedObject, $categorizedObjectPids) {
 
-		if (substr($categorizedObject, strrpos($categorizedObject, '_')+1) > 0) {
-			$table = substr($categorizedObject, 0, strrpos($categorizedObject, '_'));
+		if ($categorizedObject) {
+
+			if (substr($categorizedObject, strrpos($categorizedObject, '_')+1) > 0) {
+				$table = substr($categorizedObject, 0, strrpos($categorizedObject, '_'));
+			} else {
+				$table = $categorizedObject;
+			}
+
+			$selectedCategoriesArray = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $selectedCategories, 1);
+
+			$count = $this->categoryRepository->findCategoryCount($currentCategory, $selectedCategoriesArray, $table, $categorizedObjectPids);
+
 		} else {
-			$table = $categorizedObject;
+			$count = 0;
 		}
-
-		$selectedCategoriesArray = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $selectedCategories, 1);
-
-		$count = $this->categoryRepository->findCategoryCount($currentCategory, $selectedCategoriesArray, $table, $categorizedObjectPids);
 
 		return $count;
 	}

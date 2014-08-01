@@ -76,7 +76,7 @@ class CategoryfilterController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidg
 				$constraints[] = $query->contains($this->configuration['propertyName'], $selectedCategory);
 			}
 
-// @TODO: check out how this constraints can be added to possibly existing constraints
+// @TODO: check out how constraints can be added to possibly existing constraints
 
 			$query->matching(
 				$query->logicalAnd($constraints)
