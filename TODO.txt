@@ -1,4 +1,2 @@
-* display only categories with items
-* display count
-
-* check merging of existing and new constraints in categoryfilter widget
+* documentation
+* more tests with realurl
