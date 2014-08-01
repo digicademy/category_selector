@@ -29,22 +29,20 @@ namespace ADWLM\CategorySelector\ViewHelpers;
 class CategorycountViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
-	 * @var \TYPO3\CMS\Extbase\Object\ObjectManagerInterface
+	 * @var \ADWLM\CategorySelector\Domain\Repository\CategoryRepository
 	 * @inject
 	 */
-	protected $objectManager;
+	protected $categoryRepository;
 
 	/**
-	 * @param string $categorizedObject
-	 * @param string $categorizedObjectPids
 	 * @param integer $currentCategory
 	 * @param string $selectedCategories
+	 * @param string $categorizedObject
+	 * @param string $categorizedObjectPids
 	 * 
 	 * @return integer
 	 */
-	public function render($categorizedObject, $categorizedObjectPids, $currentCategory, $selectedCategories) {
-
-var_dump($selectedCategories);
+	public function render($currentCategory, $selectedCategories, $categorizedObject, $categorizedObjectPids) {
 
 		if (substr($categorizedObject, strrpos($categorizedObject, '_')+1) > 0) {
 			$table = substr($categorizedObject, 0, strrpos($categorizedObject, '_'));
@@ -52,34 +50,12 @@ var_dump($selectedCategories);
 			$table = $categorizedObject;
 		}
 
-		$where = 'sys_category_record_mm.tablenames = \'' . $table . '\' AND sys_category_record_mm.uid_local = ' . (int) $currentCategory;
+		$selectedCategoriesArray = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $selectedCategories, 1);
 
-		if ($categorizedObjectPids) {
-			$where .= ' AND ' . $table . '.pid IN (' . $GLOBALS['TYPO3_DB']->cleanIntList($categorizedObjectPids) . ')';
-		}
-
-		if ($selectedCategories) {
-			$categories = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $selectedCategories, 1);
-			foreach ($categories as $category) {
-				$where .= '';
-			}
-		}
-
-		$cObj = $this->objectManager->get('TYPO3\\CMS\\Frontend\\ContentObject\\ContentObjectRenderer');
-		$enableFields = $cObj->enableFields($table);
-
-$GLOBALS['TYPO3_DB']->store_lastBuiltQuery = TRUE;
-
-		$count = $GLOBALS['TYPO3_DB']->exec_SELECTcountRows(
-			'*',
-			$table . ' LEFT JOIN sys_category_record_mm ON sys_category_record_mm.uid_foreign = ' . $table . '.uid',
-			$where . $enableFields
-		);
-
-var_dump($GLOBALS['TYPO3_DB']->debug_lastBuiltQuery);
-die();
+		$count = $this->categoryRepository->findCategoryCount($currentCategory, $selectedCategoriesArray, $table, $categorizedObjectPids);
 
 		return $count;
 	}
+
 }
 ?>

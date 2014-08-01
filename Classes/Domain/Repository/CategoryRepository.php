@@ -84,5 +84,66 @@ class CategoryRepository extends \TYPO3\CMS\Extbase\Domain\Repository\CategoryRe
 
 		return $result;
 	}
+
+	/**
+	 * Counts objects belonging to the current category taking the currently selected categories into account. Categories are
+	 * ANDed, which means that all selected categories AND the current category must match for an object to be included in the count.
+	 *
+	 * @param integer $category
+	 * @param array $selectedCategories
+	 * @param string $table
+	 * @param string $pids
+	 *
+	 * @return integer
+	 */
+	public function findCategoryCount($category, $selectedCategories = array(), $table, $pids = '') {
+
+			// full quote table name but trim first and last '
+		$tablename = substr(substr($GLOBALS['TYPO3_DB']->fullQuoteStr($table), 1), 0, -1);
+
+			// prepare categories for query
+		$selectedCategories[] = $category;
+		$categories = $GLOBALS['TYPO3_DB']->cleanIntArray(array_unique($selectedCategories));
+
+			// append enable fields for given table
+		$cObj = $this->objectManager->get('TYPO3\\CMS\\Frontend\\ContentObject\\ContentObjectRenderer');
+		$enableFields = $cObj->enableFields($table);
+
+			// optional pid
+		if ($pids) {
+			$wherePid = ' AND ' . $tablename . '.pid IN (' . $GLOBALS['TYPO3_DB']->cleanIntList($pids) . ')';
+		}
+
+		$statement = '
+			SELECT COUNT(*) AS count FROM (
+				SELECT ' . $tablename . '.uid
+				FROM '. $tablename .'
+				LEFT OUTER JOIN sys_category_record_mm ON sys_category_record_mm.uid_foreign = ' . $tablename . '.uid
+				WHERE sys_category_record_mm.tablenames = \'' . $tablename . '\'
+				AND sys_category_record_mm.uid_local IN ('. implode(',', $categories) .')
+				' . $wherePid . $enableFields . '
+				GROUP BY ' . $tablename . '.uid
+				HAVING COUNT(DISTINCT sys_category_record_mm.uid_local) = '. count($categories) .'
+			) AS count;
+		';
+
+			// create the query object
+		$query = $this->createQuery();
+
+			// ignore storage PID and use TS/FF settings instead
+		$query->getQuerySettings()->setRespectStoragePage(FALSE);
+
+			// raw result
+		$query->getQuerySettings()->setReturnRawQueryResult(TRUE);
+
+			// set statement
+		$query->statement($statement);
+
+			// execute
+		$result = $query->execute();
+
+		return $result[0]['count'];
+	}
+
 }
 ?>

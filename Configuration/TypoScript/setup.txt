@@ -9,3 +9,22 @@ config.tx_extbase {
 		}
 	}
 }
+
+config.tx_extbase {
+	objects {
+		TYPO3\CMS\Extbase\Persistence\Generic\Storage\BackendInterface {
+			className = ADWLM\CategorySelector\Persistence\Generic\Storage\PatchedTypo3DbBackend
+		}
+	}
+}
+
+# should be possible from extbase 6.1 to override classes on a per plugin basis, but what's the correct notation?
+/*
+plugin.tx_categoryselector {
+	objects {
+		TYPO3\CMS\Extbase\Persistence\Generic\Storage\BackendInterface {
+			className = ADWLM\CategorySelector\Persistence\Generic\Storage\PatchedTypo3DbBackend
+		}
+	}
+}
+*/
