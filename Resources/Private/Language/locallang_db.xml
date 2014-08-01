@@ -18,7 +18,8 @@
 			<label index="categorySelector.recursive.I.3">4 Levels</label>
 			<label index="categorySelector.recursive.I.4">5 Levels</label>
 			<label index="categorySelector.recursive.I.5">Infinite (250 Levels)</label>
-			<label index="categorySelector.categorizedObject">Example record for categorization</label>
+			<label index="categorySelector.categorizedObject">Example record for category count</label>
+			<label index="categorySelector.categorizedObjectPids">Pages with categorized records for category count</label>
 
 		</languageKey>
 
@@ -34,7 +35,8 @@
 			<label index="categorySelector.recursive.I.3">4 Ebenen</label>
 			<label index="categorySelector.recursive.I.4">5 Ebenen</label>
 			<label index="categorySelector.recursive.I.5">Unendlich (250 Ebenen)</label>
-			<label index="categorySelector.categorizedObject">Beispieldatensatz für Kategorisierung</label>
+			<label index="categorySelector.categorizedObject">Beispieldatensatz für die Erstellung der Kategoriezählung</label>
+			<label index="categorySelector.categorizedObjectPids">Seiten mit kategorisierten Datensätzen für Kategoriezählung</label>
 
 		</languageKey>
 
