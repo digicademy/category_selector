@@ -93,7 +93,7 @@
                     Généré
                 <field_body>
                     <paragraph classes="first last">
-                        2014-08-02 07:20
+                        2014-08-02 21:47
         <paragraph>
             Le contenu de ce document est en relation avec TYPO3,
             un CMS/Framework GNU/GPL disponible sur 

@@ -28,3 +28,62 @@
     <section ids="integrator-manual" names="integrator\ manual">
         <title>
             Integrator Manual
+        <section ids="object-context" names="object\ context">
+            <title>
+                Object context
+            <paragraph>
+                In many extensions the categorization is implemented bound to a particular object context. The generic nature
+                of the category selector makes it possible to use it with any extbase based list of objects. This in turn means that
+                we have to tell the category selector what the particular object context it is used in is.
+            <paragraph>
+                Have a look at this graphic:
+            <figure>
+                <image candidates="{'*': u'IntegratorManual/../Images/IntegratorManual/contexts.png'}" uri="../_images/contexts.png">
+            <paragraph>
+                The list of objects (created by another plugin) needs to know which categories of the category selector have been clicked
+                to filter out it's objects. The connection between the object list and the selector is done with a Fluid widget.
+                The category selector on the other hand needs to know which objects it is used for, otherwise it could not display a
+                category count. This connection is done by setting an example object in the plugin configuration of the category selector.
+        <section ids="steps-to-integrate" names="steps\ to\ integrate">
+            <title>
+                Steps to integrate
+            <section ids="setup-the-category-selector" names="1.\ setup\ the\ category\ selector">
+                <title>
+                    1. Setup the category selector
+                <paragraph>
+                    Go to the page with the list plugin of your objects. Insert a category selector plugin on this page. Select the categories
+                    your would like to start the tree from and set how many levels of child categories you would like to display.
+            <section ids="set-the-example-object" names="2.\ set\ the\ example\ object">
+                <title>
+                    2. Set the example object
+                <paragraph>
+                    Next go to the second tab and set an example record from your object list in the according field. This is necessary for the
+                    category selector to be able to calculate the object count for each category. You can also set some pids as limitation for the
+                    category count. Finally, you can decide what happens with categories that have no items. The standard behaviour is not to display
+                    items without categories in the tree. If you check the according checkbox, categories with no items will also be displayed in the
+                    tree.
+            <section ids="insert-the-widget-in-your-list-template" names="3.\ insert\ the\ widget\ in\ your\ list\ template">
+                <title>
+                    3. Insert the widget in your list template
+                <paragraph>
+                    Now go to the Fluid template for your object list. First of all, add the category selector namespace to the top of your
+                    template:
+                <literal_block language="html" linenos="False" xml:space="preserve">
+                    {namespace c=ADWLM\CategorySelector\ViewHelpers}
+                <paragraph>
+                    You will very likely have a f:for loop to iterate through your objects for display in your list template. Wrap the category selector
+                    widget around it. Here is an example for the news extension:
+                <literal_block language="html" linenos="False" xml:space="preserve">
+                    <c:widget.categoryfilter objects="{news}" as="categorizedNews" configuration="{propertyName : 'categories', displaySelectedCategoryNames : 1}">
+                            <n:widget.paginate objects="{categorizedNews}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit}">
+                                    <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                                            <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                                    </f:for>
+                            </n:widget.paginate>
+                    </c:widget.categoryfilter>
+                <paragraph>
+                    One thing is important: The propertyName configuration option must match the name of the category field in TCA for the table your objects come from.
+                    Normally, this should be "categories". In case you have used another name, don't forget to set in the widget configuration. You can
+                    find out how the sys_category field for a given table is named by using the System > Configuration module in the backend.
+                <paragraph>
+                    Now your're done. Your list of objects should now be filterable by categories.

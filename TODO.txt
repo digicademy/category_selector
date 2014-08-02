@@ -1,2 +1,3 @@
-* documentation
-* more tests with realurl
+* possible features:
+** selector based on form with select field per category level
+** accumulate selected categories from deeper in the tree and show them in count / use them in widget

@@ -28,3 +28,25 @@
     <section ids="changelog" names="changelog">
         <title>
             Changelog
+        <table>
+            <tgroup cols="2">
+                <colspec colwidth="16">
+                <colspec colwidth="63">
+                <thead>
+                    <row classes="row-odd">
+                        <entry>
+                            <paragraph classes="first last">
+                                Version
+                        <entry>
+                            <paragraph classes="first last">
+                                Changes
+                <tbody>
+                    <row classes="row-even">
+                        <entry>
+                            <paragraph classes="first last">
+                                0.1.0
+                        <entry>
+                            <bullet_list bullet="-" classes="first last">
+                                <list_item>
+                                    <paragraph classes="first">
+                                        First public version

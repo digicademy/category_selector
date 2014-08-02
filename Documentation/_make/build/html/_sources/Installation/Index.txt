@@ -12,7 +12,7 @@ Installation
 Requirements
 ^^^^^^^^^^^^
 
-- Made for TYPO3 6.1+
+- TYPO3 6.1.0 and higher
 
 - An extbase/fluid based list of objects
 
@@ -20,5 +20,8 @@ Installation
 ^^^^^^^^^^^^
 
 Import the extension from TER and install. Include the static TypoScript of this extension in your template.
-Use the category selector plugin to configure your category tree. Insert the Fluid widget into the list template
-that you wish to filter (see below).
+
+.. figure:: ../Images/Installation/template_inclusion.png
+
+Next, use the category selector plugin to configure your category tree. Finally, insert the Fluid widget into the list template
+of the object list that you wish to filter (see next chapter).

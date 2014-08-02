@@ -82,12 +82,23 @@
 <li class="toctree-l1 nav-aside-lvl1 current cur cnt-9"><a class="current cur cnt-11 nav-aside-lvl1 reference internal" href="">Integrator Manual</a><div class="flyOutToc container" id="flyOutToc">
 <p>within this page:</p>
 <ul>
-<li><a class="reference internal" href="#">Integrator Manual</a></li>
+<li><a class="reference internal" href="#">Integrator Manual</a><ul>
+<li><a class="reference internal" href="#object-context">Object context</a></li>
+<li><a class="reference internal" href="#steps-to-integrate">Steps to integrate</a><ul>
+<li><a class="reference internal" href="#setup-the-category-selector">1. Setup the category selector</a></li>
+<li><a class="reference internal" href="#set-the-example-object">2. Set the example object</a></li>
+<li><a class="reference internal" href="#insert-the-widget-in-your-list-template">3. Insert the widget in your list template</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
+<ul class="cnt-12 nav-aside-lvl2 simple">
+</ul>
 </li>
-<li class="toctree-l1 nav-aside-lvl1 cnt-12"><a class="cnt-14 nav-aside-lvl1 reference internal" href="../KnownProblems/Index.html">Known Problems</a></li>
-<li class="toctree-l1 nav-aside-lvl1 cnt-15"><a class="cnt-17 nav-aside-lvl1 reference internal" href="../Changelog/Index.html">Changelog</a></li>
+<li class="toctree-l1 nav-aside-lvl1 cnt-13"><a class="cnt-15 nav-aside-lvl1 reference internal" href="../KnownProblems/Index.html">Known Problems</a></li>
+<li class="toctree-l1 nav-aside-lvl1 cnt-16"><a class="cnt-18 nav-aside-lvl1 reference internal" href="../Changelog/Index.html">Changelog</a></li>
 </ul>
 
 
@@ -135,6 +146,58 @@
 	<!-- highlighting of doctools.js works within the div.body container -->
 	<div class="section" id="integrator-manual">
 <h1>Integrator Manual<a class="headerlink" href="#integrator-manual" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="object-context">
+<h2>Object context<a class="headerlink" href="#object-context" title="Permalink to this headline">¶</a></h2>
+<p>In many extensions the categorization is implemented bound to a particular object context. The generic nature
+of the category selector makes it possible to use it with any extbase based list of objects. This in turn means that
+we have to tell the category selector what the particular object context it is used in is.</p>
+<p>Have a look at this graphic:</p>
+<div class="figure">
+<img alt="../_images/contexts.png" src="../_images/contexts.png" />
+</div>
+<p>The list of objects (created by another plugin) needs to know which categories of the category selector have been clicked
+to filter out it's objects. The connection between the object list and the selector is done with a Fluid widget.
+The category selector on the other hand needs to know which objects it is used for, otherwise it could not display a
+category count. This connection is done by setting an example object in the plugin configuration of the category selector.</p>
+</div>
+<div class="section" id="steps-to-integrate">
+<h2>Steps to integrate<a class="headerlink" href="#steps-to-integrate" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setup-the-category-selector">
+<h3>1. Setup the category selector<a class="headerlink" href="#setup-the-category-selector" title="Permalink to this headline">¶</a></h3>
+<p>Go to the page with the list plugin of your objects. Insert a category selector plugin on this page. Select the categories
+your would like to start the tree from and set how many levels of child categories you would like to display.</p>
+</div>
+<div class="section" id="set-the-example-object">
+<h3>2. Set the example object<a class="headerlink" href="#set-the-example-object" title="Permalink to this headline">¶</a></h3>
+<p>Next go to the second tab and set an example record from your object list in the according field. This is necessary for the
+category selector to be able to calculate the object count for each category. You can also set some pids as limitation for the
+category count. Finally, you can decide what happens with categories that have no items. The standard behaviour is not to display
+items without categories in the tree. If you check the according checkbox, categories with no items will also be displayed in the
+tree.</p>
+</div>
+<div class="section" id="insert-the-widget-in-your-list-template">
+<h3>3. Insert the widget in your list template<a class="headerlink" href="#insert-the-widget-in-your-list-template" title="Permalink to this headline">¶</a></h3>
+<p>Now go to the Fluid template for your object list. First of all, add the category selector namespace to the top of your
+template:</p>
+<div class="highlight-html"><div class="highlight"><pre>{namespace c=ADWLM\CategorySelector\ViewHelpers}
+</pre></div>
+</div>
+<p>You will very likely have a f:for loop to iterate through your objects for display in your list template. Wrap the category selector
+widget around it. Here is an example for the news extension:</p>
+<div class="highlight-html"><pre>&lt;c:widget.categoryfilter objects="{news}" as="categorizedNews" configuration="{propertyName : 'categories', displaySelectedCategoryNames : 1}"&gt;
+        &lt;n:widget.paginate objects="{categorizedNews}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit}"&gt;
+                &lt;f:for each="{paginatedNews}" as="newsItem" iteration="iterator"&gt;
+                        &lt;f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" /&gt;
+                &lt;/f:for&gt;
+        &lt;/n:widget.paginate&gt;
+&lt;/c:widget.categoryfilter&gt;</pre>
+</div>
+<p>One thing is important: The propertyName configuration option must match the name of the category field in TCA for the table your objects come from.
+Normally, this should be &quot;categories&quot;. In case you have used another name, don't forget to set in the widget configuration. You can
+find out how the sys_category field for a given table is named by using the System &gt; Configuration module in the backend.</p>
+<p>Now your're done. Your list of objects should now be filterable by categories.</p>
+</div>
+</div>
 </div>
 
 </div><!-- /div.body -->

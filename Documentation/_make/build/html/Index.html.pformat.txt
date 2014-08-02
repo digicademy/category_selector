@@ -93,7 +93,7 @@
                     Rendered
                 <field_body>
                     <paragraph classes="first last">
-                        2014-08-02 07:20
+                        2014-08-02 21:47
         <paragraph>
             The content of this document is related to TYPO3,
             a GNU/GPL CMS/Framework available from 
@@ -121,6 +121,7 @@
                         <compact_paragraph classes="toctree-l1 first">
                             <reference anchorname="" internal="True" refuri="IntegratorManual/Index.html">
                                 Integrator Manual
+                        <bullet_list>
                     <list_item classes="toctree-l1">
                         <compact_paragraph classes="toctree-l1 first">
                             <reference anchorname="" internal="True" refuri="KnownProblems/Index.html">

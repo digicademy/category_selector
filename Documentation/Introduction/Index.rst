@@ -12,8 +12,9 @@ Introduction
 What does it do?
 ^^^^^^^^^^^^^^^^
 
-This extension provides a generic category selector for lists of objects based on extbase/fluid and categorized with sys_category.
-You can display a fully configurable category tree with object count and use it for filtering a given list of objects.
+This extension provides a generic category selector for lists of objects that are based on extbase/fluid and sys_category.
+You can display a configurable category tree with object count and use it for filtering a given list of objects. The category
+selector can be used with your own extbase extension or any third party extension from TER.
 
 Features
 ^^^^^^^^
@@ -22,15 +23,32 @@ Features
 
 - possibility to exclude certain categories
 
-- recursion to a specified child category level
+- recursion to a specified category level
 
-- AND based selection of categories
+- AND based selection of multiple categories
 
 - dynamic object count based on selected categories
 
-- dynamic display based on selected categories (by default shows only categories with objects depending on user selection)
+- dynamic tree display based on selected categories
 
-- Fluid widget for filtering a list of objects by selected categories
+- widget for filtering a list of objects by selected categories
+
+Screenshots
+^^^^^^^^^^^
+
+.. figure:: ../Images/Introduction/category_tree.png
+
+An example category tree from the 6.2 introduction package. The level of recursion as well as the starting points for the tree
+are configurable in the category selector plugin.
+
+.. figure:: ../Images/Introduction/backend_form_1.png
+
+Basic plugin settings of the category selector, like starting points for the frontend tree, categories to exclude and level of
+recursion for the category tree.
+
+.. figure:: ../Images/Introduction/backend_form_2.png
+
+Plugin settings for the object count and the display of categories with no items.
 
 Credits
 ^^^^^^^
@@ -40,4 +58,6 @@ the `Akademie der Wissenschaften und der Literatur | Mainz <http://www.adwmainz.
 You can find us on `Twitter (@digicademy) <https://twitter.com/digicademy>`_ and take part in the development on
 `GitHub <https://github.com/digicademy/category_selector>`_.
 
-Credits go to the `Berlin Brandenburgische Akademie der Wissenschaften <http://www.bbaw.de/>`_ and `TELOTA <http://www.bbaw.de/telota/telota>`_. for sponsoring the development.
+Credits for sponsoring go to the `Berlin Brandenburgische Akademie der Wissenschaften <http://www.bbaw.de/>`_ and `TELOTA <http://www.bbaw.de/telota/telota>`_.
+
+The extension icon is from `Typicons <http://typicons.com/>`_ by `Stephen Hutchings <https://github.com/stephenhutchings/typicons.font>`_.
