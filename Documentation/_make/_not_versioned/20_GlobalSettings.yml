@@ -1,0 +1,86 @@
+# 20_GlobalSettings.yml
+# 2014-08-02 07:20:04
+# read from : /var/www/vhosts/adwmainz.de/typo3temp/tx_sphinx/sphinx-doc/1.2b3/lib/python/t3sphinx/settings/GlobalSettings.yml
+# written to: /var/www/workspace/category_selector/Documentation/_make/_not_versioned/20_GlobalSettings.yml
+# Result: Applied '/var/www/vhosts/adwmainz.de/typo3temp/tx_sphinx/sphinx-doc/1.2b3/lib/python/t3sphinx/settings/GlobalSettings.yml' to 'conf.py'.
+
+---
+conf.py:
+  extensions:
+  - sphinx.ext.extlinks
+  - sphinx.ext.ifconfig
+  - sphinx.ext.intersphinx
+  - sphinx.ext.todo
+  - t3sphinx.ext.t3extras
+  - t3sphinx.ext.t3tablerows
+  - t3sphinx.ext.targets
+  extlinks:
+    forge:
+    - https://forge.typo3.org/issues/%s
+    - 'forge: '
+  highlight_language: php
+  html_theme: t3org
+  intersphinx_mapping:
+    t3api:
+    - http://docs.typo3.org/TYPO3/CoreApiReference
+    - null
+    t3cgl:
+    - http://docs.typo3.org/TYPO3/CodingGuidelinesReference
+    - null
+    t3editors:
+    - http://docs.typo3.org/TYPO3/EditorsTutorial
+    - null
+    t3extbase:
+    - http://docs.typo3.org/typo3cms/ExtbaseGuide
+    - null
+    t3extbasebook:
+    - http://docs.typo3.org/typo3cms/ExtbaseFluidBook/
+    - null
+    t3fal:
+    - http://docs.typo3.org/typo3cms/FileAbstractionLayerReference
+    - null
+    t3inside:
+    - http://docs.typo3.org/typo3cms/InsideTypo3Reference
+    - null
+    t3install:
+    - http://docs.typo3.org/typo3cms/InstallationGuide
+    - null
+    t3l10n:
+    - http://docs.typo3.org/typo3cms/FrontendLocalizationGuide
+    - null
+    t3maintenance:
+    - http://docs.typo3.org/TYPO3/MaintenanceGuide
+    - null
+    t3security:
+    - http://docs.typo3.org/typo3cms/SecurityGuide
+    - null
+    t3services:
+    - http://docs.typo3.org/typo3cms/Typo3ServicesReference
+    - null
+    t3skinning:
+    - http://docs.typo3.org/typo3cms/SkinningReference/
+    - null
+    t3start:
+    - http://docs.typo3.org/typo3cms/GettingStartedTutorial
+    - null
+    t3tca:
+    - http://docs.typo3.org/typo3cms/TCAReference
+    - null
+    t3templating:
+    - http://docs.typo3.org/typo3cms/TemplatingTutorial/
+    - null
+    t3ts45:
+    - http://docs.typo3.org/typo3cms/TyposcriptIn45MinutesTutorial
+    - null
+    t3tsconfig:
+    - http://docs.typo3.org/typo3cms/TSconfigReference
+    - null
+    t3tsref:
+    - http://docs.typo3.org/typo3cms/TyposcriptReference
+    - null
+    t3tssyntax:
+    - http://docs.typo3.org/typo3cms/TyposcriptSyntaxReference
+    - null
+  pygments_style: friendly
+  today_fmt: '%Y-%m-%d %H:%M'
+...

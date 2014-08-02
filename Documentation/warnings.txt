@@ -1,0 +1,4 @@
+/var/www/workspace/category_selector/Documentation/Localization.de_DE.tmpl/Index.rst:13: WARNING: duplicate label start, other instance in /var/www/workspace/category_selector/Documentation/Index.rst
+/var/www/workspace/category_selector/Documentation/Localization.fr_FR.tmpl/Index.rst:13: WARNING: duplicate label start, other instance in /var/www/workspace/category_selector/Documentation/Localization.de_DE.tmpl/Index.rst
+/var/www/workspace/category_selector/Documentation/Localization.de_DE.tmpl/Index.rst:: WARNING: document isn't included in any toctree
+/var/www/workspace/category_selector/Documentation/Localization.fr_FR.tmpl/Index.rst:: WARNING: document isn't included in any toctree

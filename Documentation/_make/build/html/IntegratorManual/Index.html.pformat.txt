@@ -1,0 +1,30 @@
+<document source="/var/www/workspace/category_selector/Documentation/IntegratorManual/Index.rst">
+    <comment xml:space="preserve">
+        ==================================================
+    <comment xml:space="preserve">
+        FOR YOUR INFORMATION
+    <comment xml:space="preserve">
+        --------------------------------------------------
+    <comment xml:space="preserve">
+        -*- coding: utf-8 -*- with BOM.
+    <comment xml:space="preserve">
+        ==================================================
+    <comment xml:space="preserve">
+        FOR YOUR INFORMATION
+    <comment xml:space="preserve">
+        --------------------------------------------------
+    <comment xml:space="preserve">
+        -*- coding: utf-8 -*- with BOM.
+    <comment xml:space="preserve">
+        This is 'Includes.txt'. It is included at the very top of each and
+        every ReST source file in this documentation project (= manual).
+    <comment xml:space="preserve">
+        ==================================================
+    <comment xml:space="preserve">
+        DEFINE SOME TEXT ROLES
+    <comment xml:space="preserve">
+        --------------------------------------------------
+    <highlightlang lang="php" linenothreshold="9223372036854775807">
+    <section ids="integrator-manual" names="integrator\ manual">
+        <title>
+            Integrator Manual

@@ -1,0 +1,93 @@
+<document source="/var/www/workspace/category_selector/Documentation/Introduction/Index.rst">
+    <comment xml:space="preserve">
+        ==================================================
+    <comment xml:space="preserve">
+        FOR YOUR INFORMATION
+    <comment xml:space="preserve">
+        --------------------------------------------------
+    <comment xml:space="preserve">
+        -*- coding: utf-8 -*- with BOM.
+    <comment xml:space="preserve">
+        ==================================================
+    <comment xml:space="preserve">
+        FOR YOUR INFORMATION
+    <comment xml:space="preserve">
+        --------------------------------------------------
+    <comment xml:space="preserve">
+        -*- coding: utf-8 -*- with BOM.
+    <comment xml:space="preserve">
+        This is 'Includes.txt'. It is included at the very top of each and
+        every ReST source file in this documentation project (= manual).
+    <comment xml:space="preserve">
+        ==================================================
+    <comment xml:space="preserve">
+        DEFINE SOME TEXT ROLES
+    <comment xml:space="preserve">
+        --------------------------------------------------
+    <highlightlang lang="php" linenothreshold="9223372036854775807">
+    <section ids="introduction" names="introduction">
+        <title>
+            Introduction
+        <section ids="what-does-it-do" names="what\ does\ it\ do?">
+            <title>
+                What does it do?
+            <paragraph>
+                This extension provides a generic category selector for lists of objects based on extbase/fluid and categorized with sys_category.
+                You can display a fully configurable category tree with object count and use it for filtering a given list of objects.
+        <section ids="features" names="features">
+            <title>
+                Features
+            <bullet_list bullet="-">
+                <list_item>
+                    <paragraph classes="first">
+                        flexible starting points
+                <list_item>
+                    <paragraph classes="first">
+                        possibility to exclude certain categories
+                <list_item>
+                    <paragraph classes="first">
+                        recursion to a specified child category level
+                <list_item>
+                    <paragraph classes="first">
+                        AND based selection of categories
+                <list_item>
+                    <paragraph classes="first">
+                        dynamic object count based on selected categories
+                <list_item>
+                    <paragraph classes="first">
+                        dynamic display based on selected categories (by default shows only categories with objects depending on user selection)
+                <list_item>
+                    <paragraph classes="first">
+                        Fluid widget for filtering a list of objects by selected categories
+        <section ids="credits" names="credits">
+            <title>
+                Credits
+            <paragraph>
+                This extension is being developed by the 
+                <reference name="Digital Academy" refuri="http://www.digitale-akademie.de/">
+                    Digital Academy
+                <target ids="digital-academy" names="digital\ academy" refuri="http://www.digitale-akademie.de/">
+                 of
+                the 
+                <reference name="Akademie der Wissenschaften und der Literatur | Mainz" refuri="http://www.adwmainz.de/">
+                    Akademie der Wissenschaften und der Literatur | Mainz
+                <target ids="akademie-der-wissenschaften-und-der-literatur-mainz" names="akademie\ der\ wissenschaften\ und\ der\ literatur\ |\ mainz" refuri="http://www.adwmainz.de/">
+                . You can find
+                us on 
+                <reference name="Twitter (@digicademy)" refuri="https://twitter.com/digicademy">
+                    Twitter (@digicademy)
+                <target ids="twitter-digicademy" names="twitter\ (@digicademy)" refuri="https://twitter.com/digicademy">
+                 and take part in the development on
+                <reference name="GitHub" refuri="https://github.com/digicademy/category_selector">
+                    GitHub
+                <target ids="github" names="github" refuri="https://github.com/digicademy/category_selector">
+            <paragraph>
+                Credits go to the 
+                <reference name="Berlin Brandenburgische Akademie der Wissenschaften" refuri="http://www.bbaw.de/">
+                    Berlin Brandenburgische Akademie der Wissenschaften
+                <target ids="berlin-brandenburgische-akademie-der-wissenschaften" names="berlin\ brandenburgische\ akademie\ der\ wissenschaften" refuri="http://www.bbaw.de/">
+                 and 
+                <reference name="TELOTA" refuri="http://www.bbaw.de/telota/telota">
+                    TELOTA
+                <target ids="telota" names="telota" refuri="http://www.bbaw.de/telota/telota">
+                . for sponsoring the development.

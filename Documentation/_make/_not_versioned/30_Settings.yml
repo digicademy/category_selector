@@ -1,0 +1,33 @@
+# 30_Settings.yml
+# 2014-08-02 07:20:04
+# read from : /var/www/workspace/category_selector/Documentation/_make/../Settings.yml
+# written to: /var/www/workspace/category_selector/Documentation/_make/_not_versioned/30_Settings.yml
+# Result: Applied '/var/www/workspace/category_selector/Documentation/_make/../Settings.yml' to 'conf.py'.
+
+---
+conf.py:
+  copyright: 2014
+  intersphinx_mapping:
+    t3editors:
+    - http://docs.typo3.org/typo3cms/EditorsTutorial/
+    - null
+    t3start:
+    - http://docs.typo3.org/typo3cms/GettingStartedTutorial/
+    - null
+    t3tsref:
+    - http://docs.typo3.org/typo3cms/TyposcriptReference/
+    - null
+  latex_documents:
+  - - Index
+    - category_selector.tex
+    - Category Selector
+    - Torsten Schrade
+    - manual
+  latex_elements:
+    papersize: a4paper
+    pointsize: 10pt
+    preamble: \usepackage{typo3}
+  project: Category Selector
+  release: 0.1.0
+  version: 0.1
+...

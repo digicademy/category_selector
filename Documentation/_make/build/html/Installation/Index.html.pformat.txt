@@ -1,0 +1,47 @@
+<document source="/var/www/workspace/category_selector/Documentation/Installation/Index.rst">
+    <comment xml:space="preserve">
+        ==================================================
+    <comment xml:space="preserve">
+        FOR YOUR INFORMATION
+    <comment xml:space="preserve">
+        --------------------------------------------------
+    <comment xml:space="preserve">
+        -*- coding: utf-8 -*- with BOM.
+    <comment xml:space="preserve">
+        ==================================================
+    <comment xml:space="preserve">
+        FOR YOUR INFORMATION
+    <comment xml:space="preserve">
+        --------------------------------------------------
+    <comment xml:space="preserve">
+        -*- coding: utf-8 -*- with BOM.
+    <comment xml:space="preserve">
+        This is 'Includes.txt'. It is included at the very top of each and
+        every ReST source file in this documentation project (= manual).
+    <comment xml:space="preserve">
+        ==================================================
+    <comment xml:space="preserve">
+        DEFINE SOME TEXT ROLES
+    <comment xml:space="preserve">
+        --------------------------------------------------
+    <highlightlang lang="php" linenothreshold="9223372036854775807">
+    <section dupnames="installation" ids="installation">
+        <title>
+            Installation
+        <section ids="requirements" names="requirements">
+            <title>
+                Requirements
+            <bullet_list bullet="-">
+                <list_item>
+                    <paragraph classes="first">
+                        Made for TYPO3 6.1+
+                <list_item>
+                    <paragraph classes="first">
+                        An extbase/fluid based list of objects
+        <section dupnames="installation" ids="id1">
+            <title>
+                Installation
+            <paragraph>
+                Import the extension from TER and install. Include the static TypoScript of this extension in your template.
+                Use the category selector plugin to configure your category tree. Insert the Fluid widget into the list template
+                that you wish to filter (see below).

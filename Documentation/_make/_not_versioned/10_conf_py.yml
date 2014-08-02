@@ -1,0 +1,78 @@
+# 10_conf_py.yml
+# 2014-08-02 07:20:04
+# read from : conf.py
+# written to: /var/www/workspace/category_selector/Documentation/_make/_not_versioned/10_conf_py.yml
+
+---
+conf.py:
+  copyright: 2014, Torsten Schrade
+  exclude_patterns:
+  - _make
+  exclude_trees:
+  - _make
+  extensions:
+  - sphinx.ext.intersphinx
+  - sphinx.ext.todo
+  - sphinx.ext.ifconfig
+  html_static_path:
+  - ../_static
+  html_theme: typo3sphinx
+  html_theme_path:
+  - /var/www/vhosts/adwmainz.de/typo3temp/tx_sphinx/sphinx-doc/1.2b3/lib/python/t3sphinx/themes
+  htmlhelp_basename: category_selectordoc
+  latex_documents:
+  - - Index
+    - category_selector.tex
+    - Category Selector
+    - Torsten Schrade
+    - manual
+  latex_elements:
+    preamble: \usepackage{typo3}
+  lexers: {}
+  man_pages:
+  - - Index
+    - category_selector
+    - Category Selector
+    - - Torsten Schrade
+    - 1
+  master_doc: Index
+  pdf_documents:
+  - - Index
+    - category_selector
+    - Category Selector
+    - Torsten Schrade
+  pdf_fit_background_mode: scale
+  pdf_style_path:
+  - .
+  - _styles
+  pdf_stylesheets:
+  - sphinx
+  - kerning
+  - a4
+  pdf_toc_depth: 9999
+  pdf_use_numbered_links: false
+  project: Category Selector
+  pygments_style: sphinx
+  release: 0.1.0
+  source_suffix: .rst
+  t3DocTeam:
+    conf_py_file: /var/www/workspace/category_selector/Documentation/_make/conf.py
+    conf_py_package_dir: /var/www/workspace/category_selector/Documentation/_make
+    pathToGlobalYamlSettings: /var/www/vhosts/adwmainz.de/typo3temp/tx_sphinx/sphinx-doc/1.2b3/lib/python/t3sphinx/settings/GlobalSettings.yml
+    pathToYamlSettings: /var/www/workspace/category_selector/Documentation/_make/../Settings.yml
+    path_to_logdir: /var/www/workspace/category_selector/Documentation/_make/_not_versioned
+    relpath_to_logdir: _not_versioned
+    relpath_to_master_doc: ..
+  templates_path:
+  - ../_templates
+  texinfo_documents:
+  - - Index
+    - category_selector
+    - Category Selector
+    - Torsten Schrade
+    - Category Selector
+    - One line description of project.
+    - Miscellaneous
+  today_fmt: '%Y-%m-%d %H:%M'
+  version: '0.1'
+...

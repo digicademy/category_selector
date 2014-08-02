@@ -1,0 +1,131 @@
+<document source="/var/www/workspace/category_selector/Documentation/Index.rst">
+    <comment xml:space="preserve">
+        ==================================================
+    <comment xml:space="preserve">
+        FOR YOUR INFORMATION
+    <comment xml:space="preserve">
+        --------------------------------------------------
+    <comment xml:space="preserve">
+        -*- coding: utf-8 -*- with BOM.
+    <comment xml:space="preserve">
+        ==================================================
+    <comment xml:space="preserve">
+        FOR YOUR INFORMATION
+    <comment xml:space="preserve">
+        --------------------------------------------------
+    <comment xml:space="preserve">
+        -*- coding: utf-8 -*- with BOM.
+    <comment xml:space="preserve">
+        This is 'Includes.txt'. It is included at the very top of each and
+        every ReST source file in this documentation project (= manual).
+    <comment xml:space="preserve">
+        ==================================================
+    <comment xml:space="preserve">
+        DEFINE SOME TEXT ROLES
+    <comment xml:space="preserve">
+        --------------------------------------------------
+    <highlightlang lang="php" linenothreshold="9223372036854775807">
+    <target refid="start">
+    <section ids="category-selector start" names="category\ selector start">
+        <title>
+            Category Selector
+        <field_list>
+            <field classes="field-odd">
+                <field_name>
+                    Classification
+                <field_body>
+                    <paragraph classes="first last">
+                        category_selector
+            <field classes="field-even">
+                <field_name>
+                    Version
+                <field_body>
+                    <paragraph classes="first last">
+                        0.1.0
+            <field classes="field-odd">
+                <field_name>
+                    Language
+                <field_body>
+                    <paragraph classes="first last">
+                        en
+            <field classes="field-even">
+                <field_name>
+                    Description
+                <field_body>
+                    <paragraph classes="first last">
+                        Manual for the extension category_selector
+            <field classes="field-odd">
+                <field_name>
+                    Keywords
+                <field_body>
+                    <paragraph classes="first last">
+                        forEditors, forAdmins, forDevelopers
+            <field classes="field-even">
+                <field_name>
+                    Copyright
+                <field_body>
+                    <paragraph classes="first last">
+                        2014
+            <field classes="field-odd">
+                <field_name>
+                    Author
+                <field_body>
+                    <paragraph classes="first last">
+                        Torsten Schrade
+            <field classes="field-even">
+                <field_name>
+                    Email
+                <field_body>
+                    <paragraph classes="first last">
+                        <reference refuri="mailto:schradt@uni-mainz.de">
+                            schradt@uni-mainz.de
+            <field classes="field-odd">
+                <field_name>
+                    License
+                <field_body>
+                    <paragraph classes="first last">
+                        This document is published under the Open Content License
+                        available from 
+                        <reference refuri="http://www.opencontent.org/opl.shtml">
+                            http://www.opencontent.org/opl.shtml
+            <field classes="field-even">
+                <field_name>
+                    Rendered
+                <field_body>
+                    <paragraph classes="first last">
+                        2014-08-02 07:20
+        <paragraph>
+            The content of this document is related to TYPO3,
+            a GNU/GPL CMS/Framework available from 
+            <reference name="www.typo3.org" refuri="http://www.typo3.org/">
+                www.typo3.org
+            <target ids="www-typo3-org" names="www.typo3.org" refuri="http://www.typo3.org/">
+            .
+        <paragraph>
+            <strong>
+                Table of Contents
+        <compound classes="toctree-wrapper">
+            <compact_paragraph toctree="True">
+                <bullet_list>
+                    <list_item classes="toctree-l1">
+                        <compact_paragraph classes="toctree-l1 first">
+                            <reference anchorname="" internal="True" refuri="Introduction/Index.html">
+                                Introduction
+                        <bullet_list>
+                    <list_item classes="toctree-l1">
+                        <compact_paragraph classes="toctree-l1 first">
+                            <reference anchorname="" internal="True" refuri="Installation/Index.html">
+                                Installation
+                        <bullet_list>
+                    <list_item classes="toctree-l1">
+                        <compact_paragraph classes="toctree-l1 first">
+                            <reference anchorname="" internal="True" refuri="IntegratorManual/Index.html">
+                                Integrator Manual
+                    <list_item classes="toctree-l1">
+                        <compact_paragraph classes="toctree-l1 first">
+                            <reference anchorname="" internal="True" refuri="KnownProblems/Index.html">
+                                Known Problems
+                    <list_item classes="toctree-l1">
+                        <compact_paragraph classes="toctree-l1 first">
+                            <reference anchorname="" internal="True" refuri="Changelog/Index.html">
+                                Changelog

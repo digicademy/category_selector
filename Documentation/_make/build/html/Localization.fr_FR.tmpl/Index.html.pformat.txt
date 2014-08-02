@@ -1,0 +1,115 @@
+<document source="/var/www/workspace/category_selector/Documentation/Localization.fr_FR.tmpl/Index.rst">
+    <comment xml:space="preserve">
+        ==================================================
+    <comment xml:space="preserve">
+        FOR YOUR INFORMATION
+    <comment xml:space="preserve">
+        --------------------------------------------------
+    <comment xml:space="preserve">
+        -*- coding: utf-8 -*- with BOM.
+    <comment xml:space="preserve">
+        ==================================================
+    <comment xml:space="preserve">
+        FOR YOUR INFORMATION
+    <comment xml:space="preserve">
+        --------------------------------------------------
+    <comment xml:space="preserve">
+        -*- coding: utf-8 -*- with BOM.
+    <comment xml:space="preserve">
+        This is 'Includes.txt'. It is included at the very top of each and
+        every ReST source file in this documentation project (= manual).
+    <comment xml:space="preserve">
+        ==================================================
+    <comment xml:space="preserve">
+        DEFINE SOME TEXT ROLES
+    <comment xml:space="preserve">
+        --------------------------------------------------
+    <highlightlang lang="php" linenothreshold="9223372036854775807">
+    <target refid="start">
+    <section ids="category-selector-francais start" names="category\ selector\ (français) start">
+        <title>
+            Category Selector (Français)
+        <field_list>
+            <field classes="field-odd">
+                <field_name>
+                    Classification
+                <field_body>
+                    <paragraph classes="first last">
+                        extension_key
+            <field classes="field-even">
+                <field_name>
+                    Version
+                <field_body>
+                    <paragraph classes="first last">
+                        0.1.0
+            <field classes="field-odd">
+                <field_name>
+                    Langue
+                <field_body>
+                    <paragraph classes="first last">
+                        fr
+            <field classes="field-even">
+                <field_name>
+                    Description
+                <field_body>
+                    <paragraph classes="first last">
+                        entrez une description.
+            <field classes="field-odd">
+                <field_name>
+                    Mots-clés
+                <field_body>
+                    <paragraph classes="first last">
+                        list,mots-clés,séparés,par,virgules
+            <field classes="field-even">
+                <field_name>
+                    Copyright
+                <field_body>
+                    <paragraph classes="first last">
+                        2014
+            <field classes="field-odd">
+                <field_name>
+                    Auteur
+                <field_body>
+                    <paragraph classes="first last">
+                        Torsten Schrade
+            <field classes="field-even">
+                <field_name>
+                    E-mail
+                <field_body>
+                    <paragraph classes="first last">
+                        <reference refuri="mailto:author@example.com">
+                            author@example.com
+            <field classes="field-odd">
+                <field_name>
+                    Licence
+                <field_body>
+                    <paragraph classes="first last">
+                        Ce document est publié sous la licence de contenu libre
+                        disponible sur 
+                        <reference refuri="http://www.opencontent.org/opl.shtml">
+                            http://www.opencontent.org/opl.shtml
+            <field classes="field-even">
+                <field_name>
+                    Généré
+                <field_body>
+                    <paragraph classes="first last">
+                        2014-08-02 07:20
+        <paragraph>
+            Le contenu de ce document est en relation avec TYPO3,
+            un CMS/Framework GNU/GPL disponible sur 
+            <reference name="www.typo3.org" refuri="http://www.typo3.org/">
+                www.typo3.org
+            <target ids="www-typo3-org" names="www.typo3.org" refuri="http://www.typo3.org/">
+            .
+        <paragraph>
+            <strong>
+                Sommaire
+        <compound classes="toctree-wrapper">
+            <compact_paragraph toctree="True">
+                <bullet_list>
+        <comment xml:space="preserve">
+            Introduction/Index
+        <comment xml:space="preserve">
+            UsersManual/Index
+        <comment xml:space="preserve">
+            AdministratorManual/Index
