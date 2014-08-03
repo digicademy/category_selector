@@ -22,6 +22,10 @@ Installation
 Import the extension from TER and install. Include the static TypoScript of this extension in your template.
 
 .. figure:: ../Images/Installation/template_inclusion.png
+	:width: 600px
+	:alt: TypoScript template
+
+	Inclusion of the static TypoScript in your template
 
 Next, use the category selector plugin to configure your category tree. Finally, insert the Fluid widget into the list template
 of the object list that you wish to filter (see next chapter).

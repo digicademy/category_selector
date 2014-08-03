@@ -10,6 +10,23 @@ config.tx_extbase {
 	}
 }
 
+/*
+One underlying problem with extbase and sys_category should be mentioned: extbase currently
+ignores TCA's MM_match_fields option in repository queries. This means that sys_category
+can only be used with extbase if a single table makes use of the categorization. As soon as
+sys_category is used for more than one table DB queries will yield strange results and wrong
+record counts. Check out this links for more information:
+
+http://lists.typo3.org/pipermail/typo3-project-typo3v4mvc/2013-September/014338.html
+
+https://forge.typo3.org/issues/39256
+
+The category selector solves this by overriding the problematic method in Typo3DbBackend with a patch.
+For now I could only solve this with a global directive. It should not lead to any side effects, but
+nevertheless it would be better to just do it for the category selector plugin instance. Per plugin override
+of extbase classes should be possible from 6.1 onwards, but what's the correct TypoScript notation?
+*/
+
 config.tx_extbase {
 	objects {
 		TYPO3\CMS\Extbase\Persistence\Generic\Storage\BackendInterface {
@@ -18,7 +35,6 @@ config.tx_extbase {
 	}
 }
 
-# should be possible from extbase 6.1 to override classes on a per plugin basis, but what's the correct notation?
 /*
 plugin.tx_categoryselector {
 	objects {

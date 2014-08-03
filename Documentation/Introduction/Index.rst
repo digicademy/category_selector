@@ -37,18 +37,23 @@ Screenshots
 ^^^^^^^^^^^
 
 .. figure:: ../Images/Introduction/category_tree.png
+	:width: 600px
+	:alt: Extension Manager
 
-An example category tree from the 6.2 introduction package. The level of recursion as well as the starting points for the tree
-are configurable in the category selector plugin.
+	An example category selector used together with the tx_news extension (6.2 introduction package).
 
 .. figure:: ../Images/Introduction/backend_form_1.png
+	:width: 600px
+	:alt: Category selector flexform sheet 1
 
-Basic plugin settings of the category selector, like starting points for the frontend tree, categories to exclude and level of
-recursion for the category tree.
+	Basic plugin settings of the category selector: starting points for the frontend tree, categories to exclude and level of
+	recursion for the category tree.
 
 .. figure:: ../Images/Introduction/backend_form_2.png
+	:width: 600px
+	:alt: Category selector flexform sheet 2
 
-Plugin settings for the object count and the display of categories with no items.
+	Plugin settings for the object count and the handling of categories with no items.
 
 Credits
 ^^^^^^^
