@@ -35,7 +35,7 @@ class ArrayKeyExistsViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\Abstract
 	 * 
 	 * @return boolean
 	 */
-	public function render($key, $array, $level) {
+	public function render($key, $array = array(), $level = 0) {
 		return array_key_exists($key, $array[$level]);
 	}
 

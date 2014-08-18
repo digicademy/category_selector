@@ -99,7 +99,7 @@ class CategoryRepository extends \TYPO3\CMS\Extbase\Domain\Repository\CategoryRe
 	public function findCategoryCount($category, $selectedCategories = array(), $table, $pids = '') {
 
 			// full quote table name but trim first and last '
-		$tablename = substr(substr($GLOBALS['TYPO3_DB']->fullQuoteStr($table), 1), 0, -1);
+		$tablename = substr(substr($GLOBALS['TYPO3_DB']->fullQuoteStr($table, $table), 1), 0, -1);
 
 			// prepare categories for query
 		$selectedCategories[] = $category;
