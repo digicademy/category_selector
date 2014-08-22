@@ -70,11 +70,15 @@ class CategoryfilterController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidg
 
 			$query = $this->objects->getQuery();
 
-			$existingConstraints = $query->getConstraint();
-			$newConstraints = $existingConstraints;
-
+			$newConstraints = array();
+			$categoryConstraints = array();
 			foreach($selectedCategories as $selectedCategory) {
-				$newConstraints[] = $query->contains($this->configuration['propertyName'], $selectedCategory);
+				$categoryConstraints[] = $query->contains($this->configuration['propertyName'], $selectedCategory);
+			}
+			$newConstraints[] = $query->logicalAnd($categoryConstraints);
+
+			if (is_object($existingConstraints = $query->getConstraint())) {
+				$newConstraints[] = $existingConstraints;
 			}
 
 			$query->matching(
