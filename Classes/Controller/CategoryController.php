@@ -77,7 +77,7 @@ class CategoryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
 				foreach ($levelCategoryUids as $currentCategoryUid) {
 					$parent = $this->categoryRepository->findByUid($currentCategoryUid);
 					$children = $this->categoryRepository->findByParent($currentCategoryUid, $categories2skip);
-					if ($children->count() > 0) {
+					if (is_object($parent) && $children->count() > 0) {
 						$categoryTree[$i][$parent->getUid()] = $children;
 						foreach ($children as $child) {
 							$newLevelCategoryUids[] = $child->getUid();
