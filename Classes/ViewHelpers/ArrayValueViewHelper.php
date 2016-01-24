@@ -4,7 +4,7 @@ namespace ADWLM\CategorySelector\ViewHelpers;
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2013 Torsten Schrade <Torsten.Schrade@adwmainz.de>
+*  (c) 2016 Torsten Schrade <Torsten.Schrade@adwmainz.de>
 *
 *  All rights reserved
 *

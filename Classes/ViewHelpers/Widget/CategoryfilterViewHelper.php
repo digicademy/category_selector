@@ -3,7 +3,7 @@ namespace ADWLM\CategorySelector\ViewHelpers\Widget;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Torsten Schrade <Torsten.Schrade@adwmainz.de>, Academy of Sciences and Literature | Mainz
+ *  (c) 2016 Torsten Schrade <Torsten.Schrade@adwmainz.de>, Academy of Sciences and Literature | Mainz
  *
  *  All rights reserved
  *
@@ -45,7 +45,7 @@ class CategoryfilterViewHelper extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidg
 	 * @param array $configuration
 	 * @return string
 	 */
-	public function render(\TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects, $as, array $configuration = array('propertyName' => 'category', 'displaySelectedCategoryNames' => 1)) {
+	public function render(\TYPO3\CMS\Extbase\Persistence\QueryResultInterface $objects, $as, array $configuration = array('propertyName' => 'category', 'displaySelectedCategoryNames' => 1, 'pluginNamespace' => 'tx_categoryselector_pi1')) {
 		return $this->initiateSubRequest();
 	}
 }

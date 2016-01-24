@@ -3,7 +3,7 @@ namespace ADWLM\CategorySelector\Domain\Model;
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2013 Torsten Schrade <Torsten.Schrade@adwmainz.de>, Academy of Sciences and Literature | Mainz
+*  (c) 2016 Torsten Schrade <Torsten.Schrade@adwmainz.de>, Academy of Sciences and Literature | Mainz
 *  
 *  All rights reserved
 *
