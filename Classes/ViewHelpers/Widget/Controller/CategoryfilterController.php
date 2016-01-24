@@ -3,7 +3,7 @@ namespace ADWLM\CategorySelector\ViewHelpers\Widget\Controller;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Torsten Schrade <Torsten.Schrade@adwmainz.de>, Academy of Sciences and Literature | Mainz
+ *  (c) 2016 Torsten Schrade <Torsten.Schrade@adwmainz.de>, Academy of Sciences and Literature | Mainz
  *
  *  All rights reserved
  *
@@ -29,7 +29,7 @@ class CategoryfilterController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidg
 	/**
 	 * @var array
 	 */
-	protected $configuration = array('propertyName' => 'category', 'displaySelectedCategoryNames' => 1);
+	protected $configuration = array('propertyName' => 'category', 'displaySelectedCategoryNames' => 1, 'pluginNamespace' => 'tx_categoryselector_pi1');
 
 	/**
 	 * @var \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
@@ -55,11 +55,11 @@ class CategoryfilterController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidg
 	 */
 	public function indexAction() {
 
-		$tx_categoryselector_pi1 = \TYPO3\CMS\Core\Utility\GeneralUtility::_GET('tx_categoryselector_pi1');
+		$pluginNamespaceArguments = \TYPO3\CMS\Core\Utility\GeneralUtility::_GET($this->configuration['pluginNamespace']);
 
-		if ($tx_categoryselector_pi1['selectedCategories']) {
+		if ($pluginNamespaceArguments['selectedCategories']) {
 
-			$selectedCategories = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $tx_categoryselector_pi1['selectedCategories']);
+			$selectedCategories = \TYPO3\CMS\Core\Utility\GeneralUtility::trimExplode(',', $pluginNamespaceArguments['selectedCategories']);
 
 			foreach ($selectedCategories as $selectedCategory) {
 				$selectedCategoriesArray[] = $this->categoryRepository->findByUid($selectedCategory);
@@ -75,7 +75,8 @@ class CategoryfilterController extends \TYPO3\CMS\Fluid\Core\Widget\AbstractWidg
 			foreach($selectedCategories as $selectedCategory) {
 				$categoryConstraints[] = $query->contains($this->configuration['propertyName'], $selectedCategory);
 			}
-			$newConstraints[] = $query->logicalAnd($categoryConstraints);
+//			$newConstraints[] = $query->logicalAnd($categoryConstraints);
+			$newConstraints[] = $query->logicalOr($categoryConstraints);
 
 			if (is_object($existingConstraints = $query->getConstraint())) {
 				$newConstraints[] = $existingConstraints;

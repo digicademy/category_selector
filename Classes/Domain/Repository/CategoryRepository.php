@@ -3,7 +3,7 @@ namespace ADWLM\CategorySelector\Domain\Repository;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Torsten Schrade <Torsten.Schrade@adwmainz.de>, Academy of Sciences and Literature | Mainz
+ *  (c) 2016 Torsten Schrade <Torsten.Schrade@adwmainz.de>, Academy of Sciences and Literature | Mainz
  *
  *  All rights reserved
  *
@@ -114,17 +114,22 @@ class CategoryRepository extends \TYPO3\CMS\Extbase\Domain\Repository\CategoryRe
 			$wherePid = ' AND ' . $tablename . '.pid IN (' . $GLOBALS['TYPO3_DB']->cleanIntList($pids) . ')';
 		}
 
+//		$categoryStatementPart = ' AND sys_category_record_mm.uid_local IN ('. implode(',', $categories) .')';
+		$categoryStatementPart = ' AND sys_category_record_mm.uid_local = ' . (int) $category;
+//		$categoryStatementCount = count($categories);
+		$categoryStatementCount = 1;
+
 		$statement = '
 			SELECT COUNT(*) AS count FROM (
 				SELECT ' . $tablename . '.uid
 				FROM '. $tablename .'
 				LEFT OUTER JOIN sys_category_record_mm ON sys_category_record_mm.uid_foreign = ' . $tablename . '.uid
 				WHERE ' . $tablename . '.sys_language_uid = ' . (int) $GLOBALS['TSFE']->sys_language_uid . '
-				AND sys_category_record_mm.tablenames = \'' . $tablename . '\'
-				AND sys_category_record_mm.uid_local IN ('. implode(',', $categories) .')
-				' . $wherePid . $enableFields . '
+				AND sys_category_record_mm.tablenames = \'' . $tablename . '\'' .
+				$categoryStatementPart .
+				$wherePid . $enableFields . '
 				GROUP BY ' . $tablename . '.uid
-				HAVING COUNT(DISTINCT sys_category_record_mm.uid_local) = '. count($categories) .'
+				HAVING COUNT(DISTINCT sys_category_record_mm.uid_local) = ' . $categoryStatementCount . '
 			) AS count;
 		';
 
